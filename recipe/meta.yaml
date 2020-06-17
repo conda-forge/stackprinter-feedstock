@@ -1,5 +1,5 @@
 {% set name = "stackprinter" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8d050d86f98d1a054da125733c998fed6020c1e078628d616c75701496ebd0b8
+  sha256: ad985518324298de6d6339c9e94e9744cc17244d566d50c00ee103aa44afcabe
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -30,7 +30,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'Debugging-friendly exceptions for Python'
+  summary: Debugging-friendly exceptions for Python
 
 extra:
   recipe-maintainers:
