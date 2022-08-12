@@ -1,5 +1,5 @@
 {% set name = "stackprinter" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e0197c54dafe7867020731c3dcab96a14d103c1e39130fa0b5159a2f0af427b6
+  sha256: 68930b3fc8d1eee5fd81c5bc957025392549089429aafdc9db8570646fc80c7a
 
 build:
   noarch: python
