@@ -1,27 +1,30 @@
 {% set name = "stackprinter" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.12" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e0197c54dafe7867020731c3dcab96a14d103c1e39130fa0b5159a2f0af427b6
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 271efc75ebdcc1554e58168ea7779f98066d54a325f57c7dc19f10fa998ef01e
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.4
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.4
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - stackprinter
 
@@ -35,3 +38,4 @@ about:
 extra:
   recipe-maintainers:
     - scopatz
+    - tetov
