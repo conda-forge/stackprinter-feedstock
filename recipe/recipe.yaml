@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 0.2.12
+  version: "0.2.13"
 
 package:
   name: stackprinter
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/stackprinter/stackprinter-${{ version }}.tar.gz
-  sha256: 271efc75ebdcc1554e58168ea7779f98066d54a325f57c7dc19f10fa998ef01e
+  sha256: 6532f2473675927e38e0241212a341549c5d1329446d2b771bb9b1db8ecfca8e
 
 build:
   number: 0
